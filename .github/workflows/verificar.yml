@@ -1,0 +1,158 @@
+# Comprueba cada propuesta de contenido antes de que alguien la apruebe.
+#
+# ══════════════════════════════════════════════════════════════════════════
+# POR QUÉ ESTO EXISTE
+# ══════════════════════════════════════════════════════════════════════════
+#
+# Un administrador va a aprobar textos sin ser desarrollador. Si al pulsar
+# «aprobar» no ha corrido nada, está firmando a ciegas: un campo mal puesto
+# —una fecha imposible, una imagen que no existe— rompe la compilación DESPUÉS
+# de aprobar, y el sitio se queda sin actualizar sin que nadie entienda por qué.
+#
+# Esto compila el sitio de verdad con el contenido propuesto y pasa la batería
+# entera. Y además publica una VISTA PREVIA real: el Escenario 1 de la historia
+# pide que el administrador pueda previsualizar antes de aprobar, y la vista
+# previa del panel no es el sitio — es una aproximación dentro del CMS.
+#
+# ══════════════════════════════════════════════════════════════════════════
+# POR QUÉ HACE FALTA UN TESTIGO PARA TRAER EL CÓDIGO
+# ══════════════════════════════════════════════════════════════════════════
+#
+# El repositorio del sitio es PRIVADO y este es público. Para compilar hace
+# falta el código, así que este flujo necesita un testigo de solo lectura sobre
+# aquel repositorio, guardado aquí como secreto `TESTIGO_SITIO`.
+#
+# Los secretos de un repositorio público NO se entregan a un pull request que
+# venga de una bifurcación. Los que abre el panel salen de una rama de este
+# mismo repositorio, así que sí los reciben. Un pull request desde fuera
+# compilaría sin código y fallaría — que es exactamente lo que debe pasar.
+
+name: verificar
+
+on:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: verificar-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Traer el contenido propuesto
+        uses: actions/checkout@v4
+        with:
+          path: contenido
+
+      - name: Traer el código del sitio
+        uses: actions/checkout@v4
+        with:
+          repository: YouthDaconer/landing-barbosa-abogados
+          ref: main
+          token: ${{ secrets.TESTIGO_SITIO }}
+          path: sitio
+
+      # El contenido va donde el sitio espera encontrarlo. `traer-contenido.mjs`
+      # detecta que ya está —no es un repositorio de Git aquí dentro— y no
+      # intenta clonarlo encima.
+      - name: Poner el contenido en su sitio
+        run: mv contenido sitio/contenido-externo
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sitio/package-lock.json
+
+      - name: Instalar dependencias
+        working-directory: sitio
+        run: npm ci
+
+      - name: Instalar el navegador de las pruebas
+        working-directory: sitio
+        run: npx playwright install --with-deps chromium
+
+      # `npm test` compila y pasa la batería contra el emulador de Hosting. Si
+      # el contenido propuesto rompe algo, se ve AQUÍ y no después de aprobar.
+      - name: Compilar y verificar
+        working-directory: sitio
+        run: npm test
+
+      - name: Preparar la credencial de Firebase
+        env:
+          CREDENCIAL: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: printf '%s' "$CREDENCIAL" > "$RUNNER_TEMP/firebase.json"
+
+      # LA VISTA PREVIA DEL ESCENARIO 1. Un canal temporal con el sitio
+      # compilado tal y como quedaría. Caduca solo a los siete días: una vista
+      # previa que sobrevive al pull request que la creó es una copia del sitio
+      # dando vueltas sin dueño.
+      - name: Publicar la vista previa
+        id: vista
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase.json
+        working-directory: sitio
+        run: |
+          SALIDA=$(npx firebase hosting:channel:deploy "pr-${{ github.event.pull_request.number }}" \
+            --project barbosa-abogados --expires 7d --non-interactive --json)
+          URL=$(printf '%s' "$SALIDA" | node -e "
+            let e='';process.stdin.on('data',d=>e+=d).on('end',()=>{
+              const j=JSON.parse(e);
+              const canales=Object.values(j.result||{});
+              console.log(canales[0]?.url || '');
+            });")
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+
+      - name: Borrar la credencial
+        if: always()
+        run: rm -f "$RUNNER_TEMP/firebase.json"
+
+      # El enlace va en el pull request para que quien aprueba no tenga que
+      # buscarlo en los registros de la ejecución.
+      - name: Dejar el enlace en la propuesta
+        if: steps.vista.outputs.url != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const url = '${{ steps.vista.outputs.url }}';
+            const marca = '<!-- vista-previa -->';
+            const cuerpo = [
+              marca,
+              '### Vista previa de este cambio',
+              '',
+              `Así quedaría el sitio con este contenido: **${url}**`,
+              '',
+              'Es el sitio compilado de verdad, no la vista previa del panel.',
+              'Revísalo antes de aprobar. El enlace caduca en siete días.',
+            ].join('\n');
+
+            const previos = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const mio = previos.data.find((c) => c.body.includes(marca));
+
+            if (mio) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: mio.id,
+                body: cuerpo,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: cuerpo,
+              });
+            }
