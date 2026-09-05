@@ -35,12 +35,12 @@ se redacta aquí.
 
 | Ruta | Qué es | Quién lo edita |
 |---|---|---|
-| `publicaciones/es/*.md` | Una publicación por archivo. El encabezado son los datos; debajo va el texto | Mercadeo y administración |
-| `equipo.yaml` | Las fichas del carrusel de equipo | Solo administración |
-| `areas.yaml` | Las tres áreas de práctica | Solo administración |
+| `es/publicaciones/*.md` | Una publicación por archivo. El encabezado son los datos; debajo va el texto | Mercadeo y administración |
+| `es/equipo.yaml` | Las fichas del carrusel de equipo | Solo administración |
+| `es/areas.yaml` | Las tres áreas de práctica | Solo administración |
 | `media/publicaciones/` | Las imágenes que se suben desde el panel | Se llena solo |
 
-El orden de `equipo.yaml` y `areas.yaml` **es** el orden en que salen en la página. En las
+El orden de `es/equipo.yaml` y `es/areas.yaml` **es** el orden en que salen en la página. En las
 publicaciones lo decide el campo `orden`.
 
 `PENDIENTE` en un campo significa que el despacho todavía debe ese texto: el sitio dibuja el hueco

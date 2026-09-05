@@ -29,8 +29,8 @@
 # Las publicaciones también pasan por aquí —el flujo editorial de Decap es
 # global, no por colección— pero estas dos se nombran aparte a propósito: quien
 # lea el archivo tiene que ver que equipo y áreas no son contenido de mercadeo.
-/equipo.yaml    @YouthDaconer
-/areas.yaml     @YouthDaconer
+/es/equipo.yaml    @YouthDaconer
+/es/areas.yaml     @YouthDaconer
 
 # La configuración del propio flujo. Que un pull request de contenido pueda
 # cambiar quién aprueba los pull requests de contenido sería el candado
