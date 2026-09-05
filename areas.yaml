@@ -1,0 +1,60 @@
+# Las tres áreas de práctica de la firma.
+#
+# Es la única de las cuatro colecciones sin nada pendiente: las tres están
+# completas desde el principio.
+#
+# `numeral` es el ordinal que se pinta en grande a la izquierda del título. Se
+# escribe con el punto incluido porque el punto se ve: `I.`, no `I`.
+#
+# `servicios` es la lista de puntos que aparece debajo de la descripción. Añadir
+# o quitar uno es añadir o quitar una línea con guion; no hay número máximo ni
+# mínimo más allá de que la lista no puede quedarse vacía.
+#
+# EL ORDEN DE ESTA LISTA ES EL ORDEN EN LA PÁGINA.
+
+- id: derecho-penal
+  numeral: I.
+  titulo: Derecho penal
+  descripcion: >-
+    Defensa penal integral y litigio penal económico y corporativo, incluyendo el
+    acompañamiento a personas naturales, administradores y empresas desde la etapa de
+    indagación hasta el juicio.
+  servicios:
+    - Defensa en investigaciones ante la Fiscalía
+    - Casaciones
+    - Procesos contra aforados
+    - Procesos de extinción de dominio
+    - Representación de víctimas
+    - Responsabilidad penal de administradores
+    - Estrategia de crisis y manejo probatorio
+    - Delitos económicos y contra la administración pública
+
+- id: derecho-administrativo
+  numeral: II.
+  titulo: Derecho administrativo
+  descripcion: >-
+    Derecho constitucional y administrativo aplicado a la relación entre particulares,
+    empresas y el Estado, con experiencia directa en la lógica de la función pública.
+  servicios:
+    - 'Contratación estatal: estructuración y defensa'
+    - 'Medios de control: nulidad y controversias contractuales'
+    - Reparación directa frente al Estado
+    - Régimen de responsabilidad de servidores públicos
+    - Conceptos y consultas ante entidades públicas
+    - Régimen sancionatorio administrativo
+
+- id: derecho-corporativo
+  numeral: III.
+  titulo: Derecho corporativo
+  descripcion: >-
+    Asesoría societaria y comercial para empresas en operación, crecimiento o
+    transición, con atención particular a los puntos donde una decisión de negocio tiene
+    lectura penal o administrativa.
+  servicios:
+    - Estructuración y gobierno societario
+    - Fusiones, adquisiciones y due diligence
+    - Propiedad industrial e intelectual
+    - Contratación comercial
+    - Programas de cumplimiento (compliance)
+    - Asesoría a inversionistas nacionales y extranjeros
+    - Relaciones laborales y régimen disciplinario
