@@ -70,3 +70,5 @@ lleva a ninguna parte. En cuanto tiene cuerpo, gana su propia página en `/publi
   publica una vista previa real.
 - `.github/workflows/avisar.yml` avisa al repositorio del sitio cuando algo se aprueba, que es lo
   que dispara el despliegue.
+
+<!-- prueba de fusion directa -->
