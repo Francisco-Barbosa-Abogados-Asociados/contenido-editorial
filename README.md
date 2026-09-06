@@ -68,5 +68,4 @@ lleva a ninguna parte. En cuanto tiene cuerpo, gana su propia página en `/publi
   mismo**, y hay un test que falla si divergen.
 - `.github/workflows/verificar.yml` compila el sitio con este contenido en cada *pull request* y
   publica una vista previa real.
-- `.github/workflows/avisar.yml` avisa al repositorio del sitio cuando algo se aprueba, que es lo
-  que dispara el despliegue.
+- `.github/workflows/publicar.yml` publica el sitio cuando algo se aprueba.
