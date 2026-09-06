@@ -15,12 +15,16 @@
 # previa del panel no es el sitio — es una aproximación dentro del CMS.
 #
 # ══════════════════════════════════════════════════════════════════════════
-# POR QUÉ HACE FALTA UN TESTIGO PARA TRAER EL CÓDIGO
+# POR QUÉ HACE FALTA UNA CREDENCIAL PARA TRAER EL CÓDIGO
 # ══════════════════════════════════════════════════════════════════════════
 #
 # El repositorio del sitio es PRIVADO y este es público. Para compilar hace
-# falta el código, así que este flujo necesita un testigo de solo lectura sobre
-# aquel repositorio, guardado aquí como secreto `TESTIGO_SITIO`.
+# falta el código, así que este flujo necesita poder leer aquel repositorio.
+#
+# Es una LLAVE DE DESPLIEGUE DE SOLO LECTURA (`LLAVE_SITIO`), no un testigo
+# personal: está atada a un único repositorio, no puede escribir nada y no se
+# muere cuando alguien se va del despacho. El razonamiento completo está en
+# `publicar.yml`.
 #
 # Los secretos de un repositorio público NO se entregan a un pull request que
 # venga de una bifurcación. Los que abre el panel salen de una rama de este
@@ -57,7 +61,7 @@ jobs:
         with:
           repository: YouthDaconer/landing-barbosa-abogados
           ref: main
-          token: ${{ secrets.TESTIGO_SITIO }}
+          ssh-key: ${{ secrets.LLAVE_SITIO }}
           path: sitio
 
       # El contenido va donde el sitio espera encontrarlo. `traer-contenido.mjs`

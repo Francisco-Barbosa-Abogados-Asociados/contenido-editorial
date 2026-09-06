@@ -1,0 +1,112 @@
+# Publica el sitio cuando se aprueba una publicación.
+#
+# ES EL ESCENARIO 2 DE LA HISTORIA 6: «se publica, se dispara la recompilación y
+# el contenido aparece en el sitio sin intervención técnica».
+#
+# ══════════════════════════════════════════════════════════════════════════
+# POR QUÉ DESPLIEGA ESTE REPOSITORIO Y NO EL DEL SITIO
+# ══════════════════════════════════════════════════════════════════════════
+#
+# El primer diseño era otro: este repositorio le mandaba un aviso al del sitio
+# (`repository_dispatch`) y aquel desplegaba. Se cambió al ir a crear la
+# credencial, porque **mandar ese aviso exige permiso de ESCRITURA sobre el
+# repositorio privado del sitio**. Es lo que pide la API de GitHub.
+#
+# Eso habría dejado una credencial capaz de escribir en el código del despacho
+# guardada dentro de un repositorio PÚBLICO. Los secretos de un repositorio
+# público no se entregan a propuestas venidas de fuera, así que no es una fuga
+# inmediata — pero es un permiso mucho mayor del que hace falta, y guardado en el
+# peor sitio posible.
+#
+# Desplegando desde aquí, lo único que se necesita del repositorio del sitio es
+# **leerlo**. Y para leer basta una llave de despliegue de SOLO LECTURA
+# (`LLAVE_SITIO`), que además:
+#
+#   · está atada a un solo repositorio, no a una cuenta con acceso a todo;
+#   · no se muere cuando alguien se va del despacho;
+#   · no puede escribir nada, ni aquí ni allí.
+#
+# El precio es que el comando de despliegue aparece en dos flujos —aquí y en
+# `desplegar.yml` del sitio, para cuando cambia el código—. Son cuatro líneas
+# repetidas a cambio de no tener una credencial de escritura donde no toca.
+
+name: publicar
+
+on:
+  push:
+    branches: [main]
+  # Para relanzarlo a mano si algo se quedó a medias.
+  workflow_dispatch:
+
+# Dos aprobaciones seguidas no pueden desplegar a la vez. `cancel-in-progress`
+# en falso a propósito: un despliegue cancelado a medias deja el sitio en un
+# estado que no eligió nadie.
+concurrency:
+  group: publicar-el-sitio
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Traer el contenido aprobado
+        uses: actions/checkout@v4
+        with:
+          path: contenido
+
+      - name: Traer el código del sitio (solo lectura)
+        uses: actions/checkout@v4
+        with:
+          repository: YouthDaconer/landing-barbosa-abogados
+          ref: main
+          ssh-key: ${{ secrets.LLAVE_SITIO }}
+          path: sitio
+
+      # El contenido va donde el sitio espera encontrarlo.
+      # `cms/traer-contenido.mjs` ve que ya está —y que no es un repositorio de
+      # Git aquí dentro— y no intenta clonarlo encima.
+      - name: Poner el contenido en su sitio
+        run: mv contenido sitio/contenido-externo
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sitio/package-lock.json
+
+      - name: Instalar dependencias
+        working-directory: sitio
+        run: npm ci
+
+      - name: Compilar
+        working-directory: sitio
+        run: npm run build
+
+      - name: Preparar la credencial de Firebase
+        env:
+          CREDENCIAL: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -z "$CREDENCIAL" ]; then
+            echo "Falta el secreto FIREBASE_SERVICE_ACCOUNT. Ver CMS-EDITORIAL.md." >&2
+            exit 1
+          fi
+          printf '%s' "$CREDENCIAL" > "$RUNNER_TEMP/firebase.json"
+
+      # SOLO HOSTING. Una publicación de mercadeo no puede redesplegar el
+      # formulario de contacto: es la única pieza del sitio que usa un visitante,
+      # guarda datos personales y depende de tres secretos. Además, la cuenta de
+      # servicio no tiene permiso para tocar funciones aunque alguien lo pidiera.
+      - name: Publicar
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase.json
+        working-directory: sitio
+        run: npx firebase deploy --only hosting --project barbosa-abogados --non-interactive
+
+      - name: Borrar la credencial
+        if: always()
+        run: rm -f "$RUNNER_TEMP/firebase.json"
