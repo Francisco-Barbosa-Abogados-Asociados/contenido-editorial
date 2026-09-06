@@ -1,6 +1,6 @@
-# Las tres áreas de práctica de la firma.
+# Las cuatro áreas de práctica de la firma.
 #
-# Es la única de las cuatro colecciones sin nada pendiente: las tres están
+# Es la única de las cuatro colecciones sin nada pendiente: las cuatro están
 # completas desde el principio.
 #
 # `numeral` es el ordinal que se pinta en grande a la izquierda del título. Se
@@ -21,17 +21,17 @@
     indagación hasta el juicio.
   servicios:
     - Defensa en investigaciones ante la Fiscalía
+    - Delitos económicos y contra la administración pública
     - Casaciones
     - Procesos contra aforados
     - Procesos de extinción de dominio
     - Representación de víctimas
     - Responsabilidad penal de administradores
     - Estrategia de crisis y manejo probatorio
-    - Delitos económicos y contra la administración pública
 
 - id: derecho-administrativo
   numeral: II.
-  titulo: Derecho administrativo
+  titulo: Derecho administrativo y contratación pública
   descripcion: >-
     Derecho constitucional y administrativo aplicado a la relación entre particulares,
     empresas y el Estado, con experiencia directa en la lógica de la función pública.
@@ -54,7 +54,22 @@
     - Estructuración y gobierno societario
     - Fusiones, adquisiciones y due diligence
     - Propiedad industrial e intelectual
+    - Derecho del deporte y del entretenimiento
     - Contratación comercial
     - Programas de cumplimiento (compliance)
     - Asesoría a inversionistas nacionales y extranjeros
     - Relaciones laborales y régimen disciplinario
+
+- id: derecho-internacional-publico
+  numeral: IV.
+  titulo: Derecho internacional público
+  descripcion: >-
+    Representación de personas, empresas y entidades ante instancias internacionales,
+    con experiencia directa en la interlocución con órganos del Sistema Interamericano.
+  servicios:
+    - Representación ante el Sistema Interamericano de Derechos Humanos
+    - Medidas cautelares y provisionales
+    - Peticiones ante la Comisión Interamericana
+    - Litigio ante la Corte Interamericana
+    - Derecho internacional humanitario
+    - Asesoría en relaciones con el Estado colombiano ante organismos internacionales

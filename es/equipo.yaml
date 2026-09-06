@@ -18,7 +18,7 @@
 - id: francisco-barbosa-delgado
   nombre: Francisco Barbosa Delgado
   cargo: Socio fundador
-  resena: Coordina el criterio institucional de las tres áreas de práctica de la firma.
+  resena: Coordina el criterio institucional de las cuatro áreas de práctica de la firma.
   foto:
     archivo: assets/img/3.webp
     alt: Retrato del Dr. Francisco Barbosa Delgado
@@ -41,7 +41,7 @@
 
 - id: direccion-administrativo
   nombre: PENDIENTE
-  cargo: Dirección de área · Derecho administrativo
+  cargo: Dirección de área · Derecho administrativo y contratación pública
   resena: PENDIENTE
 
 - id: contratacion-estatal
