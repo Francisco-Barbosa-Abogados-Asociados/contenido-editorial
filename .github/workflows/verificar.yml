@@ -84,11 +84,36 @@ jobs:
         working-directory: sitio
         run: npx playwright install --with-deps chromium
 
-      # `npm test` compila y pasa la batería contra el emulador de Hosting. Si
-      # el contenido propuesto rompe algo, se ve AQUÍ y no después de aprobar.
-      - name: Compilar y verificar
+      # Compila y pasa la batería contra el emulador de Hosting. Si el contenido
+      # propuesto rompe algo, se ve AQUÍ y no después de aprobar.
+      #
+      # ══════════════════════════════════════════════════════════════════════
+      # LA REGRESIÓN VISUAL NO CORRE AQUÍ, Y HAY QUE DECIR POR QUÉ
+      # ══════════════════════════════════════════════════════════════════════
+      #
+      # `visual.spec.mjs` compara la portada contra una captura de referencia
+      # tomada en Windows: el archivo se llama `portada-completa-chromium-
+      # win32.png`. Playwright busca la captura del SISTEMA en el que corre, así
+      # que en este servidor —Linux— buscaría una `-linux.png` que no existe.
+      #
+      # Y no se arregla generándola sin más: Linux y Windows dibujan las fuentes
+      # de forma distinta, así que serían DOS referencias que hay que mantener
+      # sincronizadas a mano. Congelar una segunda ahora, sin haber comprobado
+      # que la primera sigue valiendo, sería congelar lo que hubiera.
+      #
+      # Mientras tanto: la regresión visual se verifica en local, en Windows, que
+      # es donde vive la referencia de la historia 1, y es requisito antes de
+      # tocar el diseño. Lo que corre aquí es todo lo demás — 300 y pico
+      # comprobaciones, incluidas las que de verdad puede romper un cambio de
+      # CONTENIDO: que compile, que el esquema lo acepte, que no se publique lo
+      # que no debe y que las páginas mantengan sus señales de SEO.
+      - name: Compilar
         working-directory: sitio
-        run: npm test
+        run: npm run build
+
+      - name: Verificar
+        working-directory: sitio
+        run: npx playwright test --grep-invert "coincide con la captura de referencia"
 
       - name: Preparar la credencial de Firebase
         env:
