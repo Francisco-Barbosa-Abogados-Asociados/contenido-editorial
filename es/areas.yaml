@@ -11,65 +11,72 @@
 # mínimo más allá de que la lista no puede quedarse vacía.
 #
 # EL ORDEN DE ESTA LISTA ES EL ORDEN EN LA PÁGINA.
+#
+# LA LISTA VA DENTRO DE `areas:`, Y NO ES DECORATIVO. El panel de contenido
+# (Decap) modela este archivo como un objeto con un campo declarado, y ese campo
+# se llama `areas` en `public/admin/config.yml`. Sin la clave, el formulario del
+# panel abre VACÍO —cero áreas donde hay cuatro— y guardarlo borra la lista
+# entera. Todo lo de abajo va sangrado dos espacios por eso.
 
-- id: derecho-penal
-  numeral: I.
-  titulo: Derecho penal
-  descripcion: >-
-    Defensa penal integral y litigio penal económico y corporativo, incluyendo el
-    acompañamiento a personas naturales, administradores y empresas desde la etapa de
-    indagación hasta el juicio.
-  servicios:
-    - Defensa en investigaciones ante la Fiscalía
-    - Delitos económicos y contra la administración pública
-    - Casaciones
-    - Procesos contra aforados
-    - Procesos de extinción de dominio
-    - Representación de víctimas
-    - Responsabilidad penal de administradores
-    - Estrategia de crisis y manejo probatorio
+areas:
+  - id: derecho-penal
+    numeral: I.
+    titulo: Derecho penal
+    descripcion: >-
+      Defensa penal integral y litigio penal económico y corporativo, incluyendo el
+      acompañamiento a personas naturales, administradores y empresas desde la etapa de
+      indagación hasta el juicio.
+    servicios:
+      - Defensa en investigaciones ante la Fiscalía
+      - Delitos económicos y contra la administración pública
+      - Casaciones
+      - Procesos contra aforados
+      - Procesos de extinción de dominio
+      - Representación de víctimas
+      - Responsabilidad penal de administradores
+      - Estrategia de crisis y manejo probatorio
 
-- id: derecho-administrativo
-  numeral: II.
-  titulo: Derecho administrativo y contratación pública
-  descripcion: >-
-    Derecho constitucional y administrativo aplicado a la relación entre particulares,
-    empresas y el Estado, con experiencia directa en la lógica de la función pública.
-  servicios:
-    - 'Contratación estatal: estructuración y defensa'
-    - 'Medios de control: nulidad y controversias contractuales'
-    - Reparación directa frente al Estado
-    - Régimen de responsabilidad de servidores públicos
-    - Conceptos y consultas ante entidades públicas
-    - Régimen sancionatorio administrativo
+  - id: derecho-administrativo
+    numeral: II.
+    titulo: Derecho administrativo y contratación pública
+    descripcion: >-
+      Derecho constitucional y administrativo aplicado a la relación entre particulares,
+      empresas y el Estado, con experiencia directa en la lógica de la función pública.
+    servicios:
+      - 'Contratación estatal: estructuración y defensa'
+      - 'Medios de control: nulidad y controversias contractuales'
+      - Reparación directa frente al Estado
+      - Régimen de responsabilidad de servidores públicos
+      - Conceptos y consultas ante entidades públicas
+      - Régimen sancionatorio administrativo
 
-- id: derecho-corporativo
-  numeral: III.
-  titulo: Derecho corporativo
-  descripcion: >-
-    Asesoría societaria y comercial para empresas en operación, crecimiento o
-    transición, con atención particular a los puntos donde una decisión de negocio tiene
-    lectura penal o administrativa.
-  servicios:
-    - Estructuración y gobierno societario
-    - Fusiones, adquisiciones y due diligence
-    - Propiedad industrial e intelectual
-    - Derecho del deporte y del entretenimiento
-    - Contratación comercial
-    - Programas de cumplimiento (compliance)
-    - Asesoría a inversionistas nacionales y extranjeros
-    - Relaciones laborales y régimen disciplinario
+  - id: derecho-corporativo
+    numeral: III.
+    titulo: Derecho corporativo
+    descripcion: >-
+      Asesoría societaria y comercial para empresas en operación, crecimiento o
+      transición, con atención particular a los puntos donde una decisión de negocio tiene
+      lectura penal o administrativa.
+    servicios:
+      - Estructuración y gobierno societario
+      - Fusiones, adquisiciones y due diligence
+      - Propiedad industrial e intelectual
+      - Derecho del deporte y del entretenimiento
+      - Contratación comercial
+      - Programas de cumplimiento (compliance)
+      - Asesoría a inversionistas nacionales y extranjeros
+      - Relaciones laborales y régimen disciplinario
 
-- id: derecho-internacional-publico
-  numeral: IV.
-  titulo: Derecho internacional público
-  descripcion: >-
-    Representación de personas, empresas y entidades ante instancias internacionales,
-    con experiencia directa en la interlocución con órganos del Sistema Interamericano.
-  servicios:
-    - Representación ante el Sistema Interamericano de Derechos Humanos
-    - Medidas cautelares y provisionales
-    - Peticiones ante la Comisión Interamericana
-    - Litigio ante la Corte Interamericana
-    - Derecho internacional humanitario
-    - Asesoría en relaciones con el Estado colombiano ante organismos internacionales
+  - id: derecho-internacional-publico
+    numeral: IV.
+    titulo: Derecho internacional público
+    descripcion: >-
+      Representación de personas, empresas y entidades ante instancias internacionales,
+      con experiencia directa en la interlocución con órganos del Sistema Interamericano.
+    servicios:
+      - Representación ante el Sistema Interamericano de Derechos Humanos
+      - Medidas cautelares y provisionales
+      - Peticiones ante la Comisión Interamericana
+      - Litigio ante la Corte Interamericana
+      - Derecho internacional humanitario
+      - Asesoría en relaciones con el Estado colombiano ante organismos internacionales
