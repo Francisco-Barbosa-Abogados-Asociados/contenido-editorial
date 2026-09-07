@@ -80,6 +80,27 @@ jobs:
         working-directory: sitio
         run: npm ci
 
+      # LAS FUNCIONES TIENEN SU PROPIO `package.json`, Y LA BATERÍA LAS IMPORTA.
+      #
+      # Cinco archivos de prueba —`antibot`, `formulario`, `habeas-data`,
+      # `superficie-publicada`— importan módulos de `functions/`, y esos módulos
+      # dependen de `firebase-functions` y `firebase-admin`, que NO están en el
+      # `package.json` de la raíz. El `npm ci` de arriba no los instala.
+      #
+      # En local no se notaba: quien tiene el proyecto tiene también
+      # `functions/node_modules` de haber desplegado alguna vez. Aquí no, y esta
+      # verificación llevaba fallando con «Cannot find package
+      # 'firebase-functions'» sin que el fallo tuviera nada que ver con el
+      # contenido propuesto.
+      #
+      # Y ESO ES PEOR QUE NO TENER VERIFICACIÓN. Quien aprueba veía una marca
+      # roja en cada propuesta y no podía distinguir si era su texto o una avería
+      # de siempre. Una verificación que siempre falla se aprende a ignorar, y
+      # entonces deja de proteger de lo que sí importa.
+      - name: Instalar las dependencias de las funciones
+        working-directory: sitio/functions
+        run: npm ci
+
       - name: Instalar el navegador de las pruebas
         working-directory: sitio
         run: npx playwright install --with-deps chromium
