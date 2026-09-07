@@ -2,6 +2,7 @@
 titulo: Cesó la horrible noche
 fecha: 2026-08-09
 categoria: Columna de opinión
+autor: francisco-barbosa-delgado
 resumen: "El nuevo gobierno recibe una auténtica multicrisis: de seguridad,
   institucional, fiscal, administrativa y de confianza ciudadana. Superarla
   exigirá restablecer el principio de autoridad, combatir la corrupción,
