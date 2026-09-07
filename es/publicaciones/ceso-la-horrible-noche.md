@@ -28,6 +28,6 @@ La alternancia democrática no resuelve por sí sola las crisis de un país; ape
 
 Francisco Barbosa
 
-*Ex fiscal general de la Nación*
+*Ex fiscal general de la Nación.*
 
 *Profesor del Adam Smith Center for Economic Freedom, Florida International University (FIU)*
