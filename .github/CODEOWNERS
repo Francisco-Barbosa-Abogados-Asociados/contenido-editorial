@@ -11,16 +11,30 @@
 # archivo exista no basta si la rama no está protegida — son dos cosas, y las
 # dos se verifican.
 #
-# ┌───────────────────────────────────────────────────────────────────────┐
-# │ CAMBIAR @YouthDaconer POR LA CUENTA O EL EQUIPO DE ADMINISTRACIÓN DEL  │
-# │ DESPACHO. Mientras esto apunte a una sola persona, esa persona es el   │
-# │ único cuello de botella para publicar — y si se va, no queda quien     │
-# │ apruebe. Con un equipo de GitHub (`@organizacion/administradores`)     │
-# │ basta la aprobación de cualquiera de sus miembros.                     │
-# └───────────────────────────────────────────────────────────────────────┘
+# ══════════════════════════════════════════════════════════════════════════
+# APUNTA A UN EQUIPO, Y ESO ES EL ARREGLO
+# ══════════════════════════════════════════════════════════════════════════
+#
+# Esto apuntaba a @YouthDaconer, una cuenta personal, y el archivo lo tenía
+# anotado como pendiente: mientras apunte a una sola persona, esa persona es el
+# único cuello de botella para publicar — y si se va, no queda quien apruebe.
+#
+# Ya no. `@Francisco-Barbosa-Abogados-Asociados/administradores` es un equipo:
+# basta la aprobación de cualquiera de sus miembros, y AÑADIR A QUIEN APRUEBA
+# DEJA DE SER UN CAMBIO DE CÓDIGO. Antes había que editar este archivo y
+# fusionarlo, y fusionarlo requería la aprobación de la única persona que podía
+# aprobar. Ahora es un clic en la organización.
+#
+# EL EQUIPO TIENE QUE EXISTIR Y TENER ACCESO ANTES DE QUE ESTO LO NOMBRE. Un
+# CODEOWNERS que nombra a quien GitHub no reconoce NO da error al fusionar: la
+# regla se descarta en silencio y `require_code_owner_reviews` se queda sin
+# nadie a quien exigir. El candado parece cerrado y está abierto. Por eso
+# `npm run cms:verificar` le pregunta a GitHub por los errores de este archivo
+# (`/codeowners/errors`, el mismo analizador que decide a quién exigir al
+# fusionar) en vez de confiar en que esté bien escrito.
 
 # Por defecto, todo lo aprueba administración.
-*       @YouthDaconer
+*       @Francisco-Barbosa-Abogados-Asociados/administradores
 
 # El Escenario 6, explícito: «el editor de mercadeo solo tiene acceso a
 # publicaciones, mientras que el administrador puede editar también equipo y
@@ -29,10 +43,10 @@
 # Las publicaciones también pasan por aquí —el flujo editorial de Decap es
 # global, no por colección— pero estas dos se nombran aparte a propósito: quien
 # lea el archivo tiene que ver que equipo y áreas no son contenido de mercadeo.
-/es/equipo.yaml    @YouthDaconer
-/es/areas.yaml     @YouthDaconer
+/es/equipo.yaml    @Francisco-Barbosa-Abogados-Asociados/administradores
+/es/areas.yaml     @Francisco-Barbosa-Abogados-Asociados/administradores
 
 # La configuración del propio flujo. Que un pull request de contenido pueda
 # cambiar quién aprueba los pull requests de contenido sería el candado
 # abriéndose solo.
-/.github/       @YouthDaconer
+/.github/       @Francisco-Barbosa-Abogados-Asociados/administradores
