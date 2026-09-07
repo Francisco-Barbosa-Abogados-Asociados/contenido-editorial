@@ -1,13 +1,12 @@
 ---
 titulo: Cesó la horrible noche
-fecha: 09/08/2026
+fecha: 2026-08-09
 categoria: Columna de opinión
 resumen: "El nuevo gobierno recibe una auténtica multicrisis: de seguridad,
   institucional, fiscal, administrativa y de confianza ciudadana. Superarla
   exigirá restablecer el principio de autoridad, combatir la corrupción,
   recuperar la confianza en las instituciones, fortalecer las relaciones con
   nuestros aliados y devolverle al Estado su capacidad de gestión."
-orden: 0
 imagen:
   encuadre: centro
   archivo: assets/contenido/publicaciones/horrible_noche.jpg
