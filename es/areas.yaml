@@ -1,31 +1,11 @@
-# Las cuatro áreas de práctica de la firma.
-#
-# Es la única de las cuatro colecciones sin nada pendiente: las cuatro están
-# completas desde el principio.
-#
-# `numeral` es el ordinal que se pinta en grande a la izquierda del título. Se
-# escribe con el punto incluido porque el punto se ve: `I.`, no `I`.
-#
-# `servicios` es la lista de puntos que aparece debajo de la descripción. Añadir
-# o quitar uno es añadir o quitar una línea con guion; no hay número máximo ni
-# mínimo más allá de que la lista no puede quedarse vacía.
-#
-# EL ORDEN DE ESTA LISTA ES EL ORDEN EN LA PÁGINA.
-#
-# LA LISTA VA DENTRO DE `areas:`, Y NO ES DECORATIVO. El panel de contenido
-# (Decap) modela este archivo como un objeto con un campo declarado, y ese campo
-# se llama `areas` en `public/admin/config.yml`. Sin la clave, el formulario del
-# panel abre VACÍO —cero áreas donde hay cuatro— y guardarlo borra la lista
-# entera. Todo lo de abajo va sangrado dos espacios por eso.
-
 areas:
   - id: derecho-penal
     numeral: I.
     titulo: Derecho penal
-    descripcion: >-
-      Defensa penal integral y litigio penal económico y corporativo, incluyendo el
-      acompañamiento a personas naturales, administradores y empresas desde la etapa de
-      indagación hasta el juicio.
+    descripcion: "Defensa y litigio penal en dos frentes: el derecho penal de la
+      administración pública y el derecho penal de empresa. Representamos tanto
+      a servidores públicos como a personas naturales, administradores y
+      compañías del sector privado."
     servicios:
       - Defensa en investigaciones ante la Fiscalía
       - Delitos económicos y contra la administración pública
@@ -34,29 +14,26 @@ areas:
       - Procesos de extinción de dominio
       - Representación de víctimas
       - Responsabilidad penal de administradores
-      - Estrategia de crisis y manejo probatorio
-
+      - Manejo y análisis probatorio
   - id: derecho-administrativo
     numeral: II.
     titulo: Derecho administrativo y contratación pública
-    descripcion: >-
-      Derecho constitucional y administrativo aplicado a la relación entre particulares,
-      empresas y el Estado, con experiencia directa en la lógica de la función pública.
+    descripcion: Derecho constitucional y administrativo aplicado a la relación
+      entre particulares, empresas y el Estado, con experiencia directa en la
+      lógica de la función pública.
     servicios:
-      - 'Contratación estatal: estructuración y defensa'
-      - 'Medios de control: nulidad y controversias contractuales'
+      - Planeación y ejecución
+      - Nulidades
       - Reparación directa frente al Estado
       - Régimen de responsabilidad de servidores públicos
       - Conceptos y consultas ante entidades públicas
       - Régimen sancionatorio administrativo
-
   - id: derecho-corporativo
     numeral: III.
     titulo: Derecho corporativo
-    descripcion: >-
-      Asesoría societaria y comercial para empresas en operación, crecimiento o
-      transición, con atención particular a los puntos donde una decisión de negocio tiene
-      lectura penal o administrativa.
+    descripcion: Asesoría societaria y comercial para empresas en operación,
+      crecimiento o transición, con atención particular a los puntos donde una
+      decisión de negocio tiene lectura penal o administrativa.
     servicios:
       - Estructuración y gobierno societario
       - Fusiones, adquisiciones y due diligence
@@ -66,17 +43,17 @@ areas:
       - Programas de cumplimiento (compliance)
       - Asesoría a inversionistas nacionales y extranjeros
       - Relaciones laborales y régimen disciplinario
-
   - id: derecho-internacional-publico
     numeral: IV.
     titulo: Derecho internacional público
-    descripcion: >-
-      Representación de personas, empresas y entidades ante instancias internacionales,
-      con experiencia directa en la interlocución con órganos del Sistema Interamericano.
+    descripcion: Representación de personas, empresas y entidades ante instancias
+      internacionales, con experiencia directa en la interlocución con órganos
+      del Sistema Interamericano.
     servicios:
       - Representación ante el Sistema Interamericano de Derechos Humanos
       - Medidas cautelares y provisionales
       - Peticiones ante la Comisión Interamericana
       - Litigio ante la Corte Interamericana
       - Derecho internacional humanitario
-      - Asesoría en relaciones con el Estado colombiano ante organismos internacionales
+      - Asesoría en relaciones con el Estado colombiano ante organismos
+        internacionales
