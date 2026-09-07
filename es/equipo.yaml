@@ -14,47 +14,54 @@
 # pendiente», que es como está pensado el diseño: no es un error.
 #
 # EL ORDEN DE ESTA LISTA ES EL ORDEN DEL CARRUSEL. El fundador va primero.
+#
+# LA LISTA VA DENTRO DE `miembros:`, Y NO ES DECORATIVO. El panel de contenido
+# (Decap) modela este archivo como un objeto con un campo declarado, y ese campo
+# se llama `miembros` en `public/admin/config.yml`. Sin la clave, el formulario
+# del panel abre VACÍO —cero integrantes donde hay ocho abogados— y guardarlo
+# borra la lista entera. Todo lo de abajo va sangrado dos espacios por eso.
 
-- id: francisco-barbosa-delgado
-  nombre: Francisco Barbosa Delgado
-  cargo: Socio fundador
-  resena: Coordina el criterio institucional de las cuatro áreas de práctica de la firma.
-  foto:
-    archivo: assets/img/3.webp
-    alt: Retrato del Dr. Francisco Barbosa Delgado
-    encuadre: derecha
+miembros:
+  - id: francisco-barbosa-delgado
+    nombre: Francisco Barbosa Delgado
+    cargo: Socio fundador
+    resena: Coordina el criterio institucional de las cuatro áreas de práctica de la firma.
+    foto:
+      archivo: assets/img/3.webp
+      alt: Retrato del Dr. Francisco Barbosa Delgado
+      encuadre: derecha
 
-- id: direccion-penal
-  nombre: PENDIENTE
-  cargo: Dirección de área · Derecho penal
-  resena: PENDIENTE
+  - id: direccion-penal
+    nombre: PENDIENTE
+    cargo: Dirección de área · Derecho penal
+    resena: PENDIENTE
 
-- id: litigio-penal-economico
-  nombre: PENDIENTE
-  cargo: Litigio penal económico y corporativo
-  resena: PENDIENTE
+  - id: litigio-penal-economico
+    nombre: PENDIENTE
+    cargo: Litigio penal económico y corporativo
+    resena: PENDIENTE
 
-- id: defensa-penal-casaciones
-  nombre: PENDIENTE
-  cargo: Defensa penal y casaciones
-  resena: PENDIENTE
+  - id: defensa-penal-casaciones
+    nombre: PENDIENTE
+    cargo: Defensa penal y casaciones
+    resena: PENDIENTE
 
-- id: direccion-administrativo
-  nombre: PENDIENTE
-  cargo: Dirección de área · Derecho administrativo y contratación pública
-  resena: PENDIENTE
+  - id: direccion-administrativo
+    nombre: PENDIENTE
+    cargo: Dirección de área · Derecho administrativo y contratación pública
+    resena: PENDIENTE
 
-- id: contratacion-estatal
-  nombre: PENDIENTE
-  cargo: Contratación estatal y medios de control
-  resena: PENDIENTE
+  - id: contratacion-estatal
+    nombre: PENDIENTE
+    cargo: Contratación estatal y medios de control
+    resena: PENDIENTE
 
-- id: direccion-corporativo
-  nombre: PENDIENTE
-  cargo: Dirección de área · Derecho corporativo
-  resena: PENDIENTE
+  - id: direccion-corporativo
+    nombre: PENDIENTE
+    cargo: Dirección de área · Derecho corporativo
+    resena: PENDIENTE
 
-- id: cumplimiento-gobierno-societario
-  nombre: PENDIENTE
-  cargo: Cumplimiento y gobierno societario
-  resena: PENDIENTE
+  - id: cumplimiento-gobierno-societario
+    nombre: PENDIENTE
+    cargo: Cumplimiento y gobierno societario
+    resena: PENDIENTE
