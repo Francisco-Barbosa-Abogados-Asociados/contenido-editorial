@@ -5,9 +5,6 @@ categoria: Columna de opinión
 autor: francisco-barbosa-delgado
 resumen: Investigar a alguien por marchar pacíficamente sería una arbitrariedad.
   Investigar a quien incendia, destruye o amenaza es cumplir la Constitución.
-imagen:
-  encuadre: centro
-  archivo: assets/contenido/publicaciones/pexels-alfomedeiros-12151283.jpg
 ---
 El tema siempre vuelve a Colombia. Las manifestaciones violentas, los bloqueos, el vandalismo y el terrorismo urbano han formado parte de nuestra agenda durante los últimos años. Los estallidos de 2019 y 2021 dejaron ciudades paralizadas, sistemas de transporte destruidos, establecimientos saqueados y ciudadanos sometidos al miedo y la zozobra. Desde entonces quedó una discusión que no debería admitir confusiones: una cosa es el derecho fundamental a protestar, y otra, utilizar una movilización como cobertura para cometer delitos.
 
