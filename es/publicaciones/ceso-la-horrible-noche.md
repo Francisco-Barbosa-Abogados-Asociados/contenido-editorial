@@ -8,9 +8,6 @@ resumen: "El nuevo gobierno recibe una auténtica multicrisis: de seguridad,
   exigirá restablecer el principio de autoridad, combatir la corrupción,
   recuperar la confianza en las instituciones, fortalecer las relaciones con
   nuestros aliados y devolverle al Estado su capacidad de gestión."
-imagen:
-  encuadre: centro
-  archivo: assets/contenido/publicaciones/horrible_noche.jpg
 ---
 La democracia tiene una virtud que ninguna otra forma de gobierno posee: permite que los ciudadanos evalúen a quienes ejercen el poder y, mediante el voto, corrijan el rumbo cuando consideren que un proyecto político ha fracasado. Eso acaba de ocurrir en Colombia. El gobierno de Gustavo Petro llegó a su fin dejando un país más dividido, con instituciones debilitadas y enfrentando una compleja crisis en materia de seguridad, confianza y gestión pública.
 
