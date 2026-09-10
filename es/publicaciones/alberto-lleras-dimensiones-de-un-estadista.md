@@ -6,9 +6,6 @@ autor: francisco-barbosa-delgado
 resumen: A los 120 años de su natalicio, conviene recordar las lecciones que
   dejó el expresidente, quien también fue periodista, político e
   internacionalista.
-imagen:
-  encuadre: centro
-  archivo: assets/contenido/publicaciones/6230eb72a2c86.r_d.511-58-4000.webp
 ---
 Alberto Lleras Camargo tuvo muchas facetas. Fue periodista, político e internacionalista, y esas tres dimensiones se cruzaron a lo largo de una vida que le permitió participar como protagonista en algunos de los momentos decisivos de la historia colombiana y latinoamericana del siglo XX.
 
