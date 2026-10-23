@@ -1,0 +1,21 @@
+---
+titulo: Sometimiento
+fecha: 2026-10-23
+categoria: Columna de opinión
+autor: francisco-barbosa-delgado
+resumen: Hay antecedentes legales que permiten discutir con rigor qué
+  herramientas funcionan y cuáles deben corregirse.
+imagen:
+  encuadre: centro
+---
+Vuelve y juega el sometimiento a la justicia. Esta figura lleva más de treinta años en el centro de la discusión colombiana. Durante el gobierno de César Gaviria, los decretos 2047 y 3030 de 1990, complementados por el Decreto 303 de 1991, abrieron una vía para la entrega de narcotraficantes, con beneficios por su colaboración y rebajas de penas, así como garantías de no extradición bajo las condiciones de ese régimen. Fue una herramienta dirigida a enfrentar el narcoterrorismo del cartel de Medellín. La discusión era cómo conseguir que los delincuentes se entregaran y respondieran ante los jueces.
+
+Después llegó la Ley 975 de 2005, de Justicia y Paz, durante el gobierno de Álvaro Uribe, para judicializar a integrantes de grupos armados desmovilizados, especialmente de las estructuras paramilitares. Fue un régimen de justicia transicional con penas alternativas condicionadas a la verdad, la justicia y la reparación. Sus resultados deben medirse también por los delitos esclarecidos y los patrimonios perseguidos. Durante nuestra administración de la Fiscalía se imputaron aproximadamente 85.000 hechos delictivos al paramilitarismo y se entregaron al Fondo de Reparación de las Víctimas alrededor de 1.600 bienes, avaluados en 1,8 billones de pesos. Entregar bienes al Fondo fue un paso fundamental.
+
+Durante el gobierno de Iván Duque se expidió el Decreto 965 de 2020, que estableció una ruta para el sometimiento individual de integrantes de grupos armados organizados. También debe recordarse la Ley 1908 de 2018, aprobada al final del gobierno de Juan Manuel Santos, que buscaba la investigación y judicialización de organizaciones criminales y reguló su sujeción a la justicia. Hay, por tanto, antecedentes legales que permiten discutir con rigor qué herramientas funcionan y cuáles deben corregirse.
+
+Durante el gobierno de Gustavo Petro se presentó otra propuesta, que no logró convertirse en ley y frente a la cual formulamos reparos desde la Fiscalía. Contemplaba penas de entre seis y ocho años de prisión y la posibilidad de conservar, bajo determinadas condiciones, un porcentaje de los bienes entregados. Mi objeción era de fondo: los beneficios debían guardar proporción con la gravedad de los delitos y asegurar el desmantelamiento real de las organizaciones. El sometimiento exige responsabilidad penal, entrega del patrimonio ilícito y reparación. Tampoco puede confundirse con una amnistía o un indulto, figuras reservadas a delitos políticos y los conexos legalmente admisibles, con exclusiones para las atrocidades.
+
+Ahora, el gobierno de Abelardo De La Espriella propone recuperar ese enfoque de sometimiento ante la justicia ordinaria. La iniciativa plantea condiciones fijadas por la ley, sin reconocimiento de estatus político: entrega de armas y bienes, liberación de secuestrados y menores reclutados, colaboración con la justicia y reparación. Según los detalles publicados, tendría una fase administrativa de hasta tres meses, prorrogable una vez, seguida de la judicialización individual. Contemplaría rebajas del 50 % para integrantes y del 30 % para cabecillas, con una pena final mínima de diez años para estos últimos. El Gobierno ha señalado, además, que la oferta no supone suspender capturas ni frenar la extradición. Son disposiciones propuestas, todavía sujetas al Congreso.
+
+Ese punto de partida merece respaldo, pero su éxito dependerá de las condiciones que finalmente se aprueben y de la capacidad para hacerlas cumplir. Cada beneficio debe corresponder a una colaboración comprobada; cada bien ocultado debe tener consecuencias; cada víctima debe poder intervenir y reclamar reparación. Una organización sometida tiene que dejar de reclutar, extorsionar, secuestrar y controlar territorios. Colombia necesita un mecanismo que produzca condenas y desmantele estructuras, acompañado de una Fuerza Pública que mantenga la presión y una justicia con recursos para actuar. El sometimiento se acredita con hechos.
